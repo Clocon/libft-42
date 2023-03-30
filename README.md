@@ -85,3 +85,4 @@ To use the library functions in a program, include the **libft.h** header file a
 - **[ft_printf](../../../ft_printf-42)**
 - **[get_next_line](../../../get_next_line-42)**
 - **[pipex](../../../pipex-42)**
+- **[push_swap](../../../push_swap-42)**
