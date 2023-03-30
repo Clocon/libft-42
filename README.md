@@ -81,7 +81,7 @@ To use the library functions in a program, include the **libft.h** header file a
 
 ## Links to my other projects at 42:
 
-- **[Main Page](/README.md)**
-- **[ft_printf](/ft_printf)**
-- **[get_next_line](/get_next_line)**
-- **[pipex](/pipex)**
+- **[Main Page](../../../Clocon)**
+- **[ft_printf](../../../ft_printf-42)**
+- **[get_next_line](../../../get_next_line-42)**
+- **[pipex](../../../pipex-42)**
