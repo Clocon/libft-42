@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_splitB.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:14:40 by lumorale          #+#    #+#             */
-/*   Updated: 2022/12/13 16:33:31 by lumorale         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:23:22 by lumorale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	word_counter(const char *str, char c)
+static size_t	word_counter(char *str, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -27,14 +27,14 @@ static size_t	word_counter(const char *str, char c)
 	return (j);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
-	char	**hommer;
+	char	**str;
 	size_t	len;
 	size_t	i;
 
-	hommer = malloc(sizeof(char *) * (word_counter(s, c) + 1));
-	if (!hommer)
+	str = malloc(sizeof(char *) * (word_counter(s, c) + 1));
+	if (!str)
 		return (0);
 	i = 0;
 	while (*s)
@@ -47,11 +47,11 @@ char	**ft_split(char const *s, char c)
 				len++;
 				s++;
 			}
-			hommer[i++] = ft_substr(s - len, 0, len);
+			str[i++] = ft_substr(s - len, 0, len);
 		}
 		else
 			s++;
 	}
-	hommer[i] = 0;
-	return (hommer);
+	str[i] = 0;
+	return (str);
 }

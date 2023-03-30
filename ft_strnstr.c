@@ -12,25 +12,25 @@
 
 #include <string.h>
 
-char	*ft_strnstr(const char	*big, const char *little, size_t len)
+char	*ft_strnstr(char *big, char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
 	if (!little[0])
-		return ((char *)big);
+		return (big);
 	while (big[i])
 	{
 		j = 0;
 		while (big[i + j] == little[j] && (i + j) < len)
 		{
 			if (!big[i + j] && !little[j])
-				return ((char *)&big[i]);
+				return (&big[i]);
 			j++;
 		}
 		if (!little[j])
-			return ((char *)&big[i]);
+			return (&big[i]);
 		i++;
 	}
 	return (0);

@@ -1,61 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_hexa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 18:49:48 by lumorale          #+#    #+#             */
-/*   Updated: 2023/02/08 12:21:14 by lumorale         ###   ########.fr       */
+/*   Created: 2022/12/15 15:41:51 by lumorale          #+#    #+#             */
+/*   Updated: 2023/01/30 17:06:48 by lumorale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_total_digits(long nb)
+static int	ft_size(unsigned long nb)
 {
-	size_t	counter;
+	int	total;
 
-	counter = 0;
-	if (nb >= 0 && nb <= 9)
+	total = 0;
+	if (nb >= 0 && nb <= 15)
 		return (1);
 	else if (nb < 0)
-	{
-		counter++;
 		nb *= -1;
-	}
 	while (nb > 0)
 	{
-		nb /= 10;
-		counter++;
+		nb /= 16;
+		total++;
 	}
-	return (counter);
+	return (total);
 }
 
-char	*ft_itoa(int n)
+char	*ft_hexa(unsigned long nb, char *hexa)
 {
-	long	nb;
-	size_t	total;
-	char	*str;
+	char			*result;
+	int				i;
 
-	nb = n;
-	total = ft_total_digits(nb);
-	str = ft_calloc(sizeof(char), total + 1);
-	if (!str)
+	i = ft_size(nb);
+	result = malloc(sizeof(char) * i + 1);
+	if (!result)
 		return (0);
-	str[total--] = 0;
+	result[i--] = 0;
 	if (nb < 0)
-	{
-		str[0] = '-';
 		nb *= -1;
-	}
 	if (nb == 0)
-		str[0] = 48;
+		result[0] = hexa[0];
 	while (nb > 0)
 	{
-		str[total] = (nb % 10) + 48;
-		nb /= 10;
-		total--;
+		result[i] = hexa[nb % 16];
+		nb /= 16;
+		i--;
 	}
-	return (str);
+	return (result);
 }

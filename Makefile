@@ -5,18 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/29 16:45:08 by lumorales         #+#    #+#              #
-#    Updated: 2022/12/15 13:12:02 by lumorale         ###   ########.fr        #
+#    Created: 2022/12/14 12:26:10 by lumorale          #+#    #+#              #
+#    Updated: 2023/03/10 13:45:03 by lumorale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= libft.a
+NAME			=	libft.a
 
-CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror
-RM				= rm -f
+CC				=	gcc
+CFLAGS			=	-Wall -Werror -Wextra
+RM				=	rm -f
+AR				=	ar -rcs
 
-SRCS			=	ft_isalnum.c \
+#		COLORS		#
+CYELLOW			=\033[1;33m
+CGREEN			=\033[0;32m
+CRED			=\033[0;91m
+CRESET			=\033[0m
+
+
+SRCS		=		ft_printf.c \
+					ft_putchar_counter.c \
+					ft_putstr.c \
+					ft_itoa_unsigned.c \
+					ft_hexa.c \
+					ft_isalnum.c \
 					ft_isalpha.c \
 					ft_isascii.c \
 					ft_isdigit.c \
@@ -59,26 +72,26 @@ SRCS			=	ft_isalnum.c \
 					ft_lstclear_bonus.c \
 					ft_lstiter_bonus.c \
 					ft_lstmap_bonus.c \
+					get_next_line.c \
 
-OBJS			= $(SRCS:.c=.o)
-
-#BONUS_OBJS		= $(BONUS:.c=.o)
+OBJS			=	$(SRCS:.c=.o)
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+				@$(AR) $(NAME) $(OBJS)
+				@echo "\n$(CYELLOW)$(NAME) -> $(CGREEN) compiled$(CRESET)"
 
 clean:
-				$(RM) $(OBJS) 
-#$(BONUS_OBJS)
+				@$(RM) $(OBJS)
+				@echo "${CYELLOW}${NAME} $(CGREEN) -> ${CRED} objects files were deleted.${CRESET}"
 
-fclean:			clean
-				$(RM) $(NAME)
 
-re:				fclean $(NAME)
+fclean:			
+				@$(RM) $(NAME)
+				@echo "${CYELLOW}${NAME} $(CGREEN) -> ${CRED} was deleted.${CRESET}"
 
-#bonus:			$(BONUS_OBJS)
-#				ar rcs $(NAME) $(BONUS_OBJS)
 
-.PHONY:			all clean fclean re #bonus
+re:				fclean all
+
+.PHONY:			all clean fclean re

@@ -6,13 +6,13 @@
 /*   By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 13:38:07 by lumorale          #+#    #+#             */
-/*   Updated: 2022/12/09 13:15:36 by lumorale         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:14:14 by lumorale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(char *s, int c)
 {
 	int		i;
 

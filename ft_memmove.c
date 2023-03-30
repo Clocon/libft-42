@@ -6,14 +6,14 @@
 /*   By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 11:17:20 by lumorale          #+#    #+#             */
-/*   Updated: 2022/12/13 10:55:25 by lumorale         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:14:08 by lumorale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, void *src, size_t n)
 {
 	if (!dest && !src)
 		return (0);

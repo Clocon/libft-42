@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 12:44:57 by lumorale          #+#    #+#             */
-/*   Updated: 2023/02/08 12:23:57 by lumorale         ###   ########.fr       */
+/*   Created: 2022/12/15 15:20:16 by lumorale          #+#    #+#             */
+/*   Updated: 2023/01/30 17:14:00 by lumorale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+void	ft_putstr(char *str, int *counter)
 {
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+	size_t	i;
+
+	i = 0;
+	if (!str)
+		str = "(null)";
+	while (str[i])
+	{
+		ft_putchar_counter(str[i], counter);
+		i++;
+	}
 }

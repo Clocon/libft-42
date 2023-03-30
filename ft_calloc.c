@@ -6,7 +6,7 @@
 /*   By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 11:35:22 by lumorale          #+#    #+#             */
-/*   Updated: 2022/12/09 13:13:44 by lumorale         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:20:42 by lumorale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*hommer;
+	void	*str;
 
-	hommer = malloc(nmemb * size);
-	if (!hommer)
+	str = malloc(nmemb * size);
+	if (!str)
 		return (0);
-	ft_bzero(hommer, (nmemb * size));
-	return (hommer);
+	ft_bzero(str, (nmemb * size));
+	return (str);
 }

@@ -6,13 +6,13 @@
 /*   By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 11:35:54 by lumorale          #+#    #+#             */
-/*   Updated: 2022/12/09 13:15:39 by lumorale         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:15:34 by lumorale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char *s1, char *set)
 {
 	size_t	i;
 	size_t	j;

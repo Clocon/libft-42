@@ -6,26 +6,26 @@
 /*   By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 11:46:17 by lumorale          #+#    #+#             */
-/*   Updated: 2022/12/09 13:14:40 by lumorale         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:23:36 by lumorale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strdup(char *s)
 {
-	char	*hommer;
+	char	*str;
 	size_t	i;
 
-	hommer = malloc(ft_strlen(s) + 1);
-	if (!hommer)
+	str = malloc(ft_strlen(s) + 1);
+	if (!str)
 		return (0);
 	i = 0;
 	while (s[i])
 	{
-		hommer[i] = (char)s[i];
+		str[i] = (char)s[i];
 		i++;
 	}
-	hommer[i] = 0;
-	return (hommer);
+	str[i] = 0;
+	return (str);
 }
