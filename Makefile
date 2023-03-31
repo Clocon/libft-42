@@ -6,12 +6,11 @@
 #    By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 16:45:08 by lumorales         #+#    #+#              #
-#    Updated: 2023/03/30 13:21:17 by lumorale         ###   ########.fr        #
+#    Updated: 2023/03/31 18:12:33 by lumorale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	libft.a
-PRINTF			=	../ft_printf/libftprintf.a
 
 CC				=	gcc
 CFLAGS			=	-Wall -Werror -Wextra
@@ -73,10 +72,8 @@ OBJS			=	$(SRCS:.c=.o)
 %.o: %.c
 				@$(CC) $(CFLAGS) -c $< -o $@
 
-all:			$(NAME) $(PRINTF)
+all:			$(NAME)
 
-$(PRINTF):
-				@make -C ../ft_printf
 
 $(NAME):		$(OBJS)
 				@$(AR) $(NAME) $(OBJS)
@@ -84,13 +81,11 @@ $(NAME):		$(OBJS)
 
 clean:
 				@$(RM) $(OBJS)
-				@make -C ../ft_printf clean
 				@echo "${CYELLOW}${NAME} $(CGREEN) -> ${CRED} objects files were deleted.${CRESET}"
 
 
-fclean:			
+fclean:			clean
 				@$(RM) $(NAME)
-				@make -C ../ft_printf fclean
 				@echo "${CYELLOW}${NAME} $(CGREEN) -> ${CRED} was deleted.${CRESET}"
 
 
