@@ -16,6 +16,8 @@ int	ft_strlen(const char *str)
 {
 	int	counter;
 
+	if (!str)
+		return (0);
 	counter = 0;
 	while (str[counter] != 0)
 		counter++;
