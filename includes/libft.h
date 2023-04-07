@@ -6,7 +6,7 @@
 /*   By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:46:35 by lumorales         #+#    #+#             */
-/*   Updated: 2023/03/20 13:55:41 by lumorale         ###   ########.fr       */
+/*   Updated: 2023/04/07 15:08:02 by lumorale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(char *s);
 char	*ft_substr(char *s, int start, int len);
 char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin_free(char *s1, char *s2);
 char	*ft_strtrim(char *s1, char *set);
 char	**ft_split(char *s, char c);
 char	*ft_itoa(int n);
